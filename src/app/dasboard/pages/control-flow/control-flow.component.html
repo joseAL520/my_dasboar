@@ -1,3 +1,69 @@
-<p>   
-   control flow
-</p>
+<section class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+   <!-- ngIf @if -->
+   <div class="bg-white rounded shadow p-10">
+      <h2 class="text-2xl font-bold mb-5"> if: {{ showContent() }} </h2>
+
+      <button 
+         class="p-2 bg-blue-500 rounded text-white"
+         (click)="toggleContent()">
+         click me!
+      </button>
+
+      @if ( showContent() ) {
+         <br>
+         <br>
+         <p>hola mundo</p>
+      }@else {
+         <br>
+         <br>
+         <p>*************</p>
+      }
+
+   </div>
+
+
+     <!-- ngSwith @swithc -->
+   <div class="bg-white rounded shadow p-10">
+      <p> Nota: {{ grade() }}  </p>
+      @switch ( grade() ) {
+         @case ('A') {
+            <p>Arriiba de 90</p>
+         }
+         @case ('B') {
+            <p>Arriiba de 80</p>
+         }
+         @default {
+            <p>Reprobado</p>
+         }
+      }
+
+   </div>
+
+
+   <!-- ngFor @for -->
+   <div class="bg-white rounded shadow p-10">
+      <ul>
+         @for (item of framworks(); track framworks; let i = $index) {
+            <li>{{ i + 1 }} - {{ item }}</li>
+         }
+      </ul>
+   </div>
+
+   <!-- ngFor @for - empty -->
+   <div class="bg-white rounded shadow p-10">
+      <ul>
+         @for (item of framworks2(); track $index) {
+            <li>{{ item }}</li>
+         } @empty {
+            <li> No hay framworks agregados </li>
+         }
+      </ul>
+   </div>
+
+
+</section>
+
+
+
+ 
