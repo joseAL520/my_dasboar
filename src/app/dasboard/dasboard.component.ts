@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-dasboard',
   standalone: true,
   imports: [
-    CommonModule,
+    RouterModule,
   ],
   templateUrl:'dasboard.component.html',
   styles: `
@@ -15,4 +16,4 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DasboardComponent { }``
+export  default class DasboardComponent { }``

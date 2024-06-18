@@ -14,4 +14,4 @@ import {  Component } from '@angular/core';
   `,
  
 })
-export class DeferViewsComponent { }
+export default class DeferViewsComponent { }

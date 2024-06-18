@@ -14,4 +14,4 @@ import {  Component } from '@angular/core';
   `,
  
 })
-export class ViewsTrasitionComponent { }
+export default class ViewsTrasitionComponent { }
