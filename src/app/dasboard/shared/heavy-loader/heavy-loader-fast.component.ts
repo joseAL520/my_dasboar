@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-heavy-loader-fast',
@@ -7,6 +7,24 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   imports: [
     CommonModule,
   ],
-  template: `<p>heavy-loader-fast works!</p>`,
+  template: `
+  
+    <section [ngClass]="['w-full', cssClass ]">
+
+      <ng-content />
+    
+    </section>
+
+  `,
 })
-export class HeavyLoaderFastComponent { }
+export class HeavyLoaderFastComponent {
+
+  @Input({ required: true }) cssClass!: string;
+
+  constructor() {
+    console.log('HeavyLoader Fast creado');
+  }
+
+
+
+}
