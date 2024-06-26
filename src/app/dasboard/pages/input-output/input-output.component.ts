@@ -14,21 +14,7 @@ export default class InputOutputComponent  implements OnDestroy {
 
 
 
-  public products = signal<Product[]>([
-    {
-      id: 1,
-      name: 'product 1',
-      quantity: 2
-    },
-    {
-      id: 2,
-      name: 'product 2',
-      quantity: 2
-    }
-
-
-  ])
-
+  public products = signal<Product[]>([ ])
 
   private intervalSubscription = interval(1000).pipe(
     tap( () => {
@@ -45,7 +31,15 @@ export default class InputOutputComponent  implements OnDestroy {
   ).subscribe();
 
 
+  public updateProduct( product:Product, quantity: number){
 
+    this.products.update( (products) => 
+      products.map( (p) =>
+        p.id === product.id ? { ...p, quantity} : p
+      ) 
+  )
+
+  }
 
   ngOnDestroy(): void {
    this.intervalSubscription.unsubscribe();

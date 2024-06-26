@@ -15,7 +15,10 @@
     </div> -->
 
  @for (product of products(); track product.id) {
-     <app-product-card></app-product-card>
+     <app-product-card 
+     [product]="product"
+     (onIncrementeQuatity)="updateProduct(product,$event)"
+     ></app-product-card>
  }
 
 
