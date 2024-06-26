@@ -14,6 +14,9 @@
         </button>    
     </div> -->
 
-    <app-product-card></app-product-card>
+ @for (product of products(); track product.id) {
+     <app-product-card></app-product-card>
+ }
+
 
 </div>
