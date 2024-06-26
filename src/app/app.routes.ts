@@ -47,6 +47,12 @@ export const routes: Routes = [
             loadComponent: () => import('./dasboard/pages/views-trasition/views-trasition2.component'),
           },
           {
+            path: 'inputs-outputs',
+            title: 'inputs - outputs',
+            loadComponent: () => import('./dasboard/pages/input-output/input-output.component'),
+          },
+          
+          {
             path:'', redirectTo: 'control-flow', pathMatch: 'full',
           }
         ]
